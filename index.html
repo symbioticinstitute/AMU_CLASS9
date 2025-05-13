@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMU Class 9 Admission Test 2025 - Interview Selection Probability</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #8e44ad;
+            --accent: #9b59b6;
+            --light: #ecf0f1;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+            --dark: #34495e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Gradient animated scrolling banner */
+        .gradient-banner {
+            margin-top: 15px;
+            padding: 12px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            background: linear-gradient(-45deg, #8e44ad, #9b59b6, #2c3e50, #8e44ad);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        .gradient-text {
+            display: inline-block;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            animation: scroll-left 20s linear infinite;
+            padding-left: 100%;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .calculator-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .header p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 15px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.2);
+            outline: none;
+        }
+        
+        button {
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(155, 89, 182, 0.2);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(155, 89, 182, 0.3);
+        }
+        
+        .result {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f1f9ff;
+            border-left: 5px solid var(--info);
+        }
+        
+        .result h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .result-item {
+            margin: 15px 0;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .result-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .result-status {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent);
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #f1e7f8;
+            border-radius: 8px;
+        }
+        
+        .result-note {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #fdf2e9;
+            border-left: 4px solid var(--warning);
+            font-size: 14px;
+        }
+        
+        .result-low-chances {
+            background-color: #fae5e5;
+            border-left: 4px solid var(--danger);
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .info-heading {
+            color: var(--primary);
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .info-point {
+            margin: 12px 0;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-icon {
+            color: var(--info);
+            margin-right: 10px;
+            font-size: 18px;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        .contact {
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .badge-info {
+            background-color: #e1f0fa;
+            color: var(--info);
+        }
+        
+        .seat-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .seat-item {
+            flex-basis: 48%;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .total-seats {
+            background-color: #f1e7f8;
+            border: 2px solid var(--accent);
+            color: var(--primary);
+        }
+        
+        .seat-count {
+            font-weight: 600;
+            color: var(--secondary);
+            display: block;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        
+        .total-seats .seat-count {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .important-info {
+            background-color: #e8f0ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4a69bd;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <div class="header">
+                <h1>AMU Class 9 Admission Test 2025</h1>
+                <p>Interview Selection Probability Calculator</p>
+                <span class="badge badge-info">11,528 Students Appeared This Year</span>
+                <div style="font-weight: bold; color: #ffeb3b; text-align: center; margin-top: 10px; font-size: 18px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">SYMBIOTIC INTERMEDIATE SCHOOL</div>
+                <div class="gradient-banner">
+                    <div class="gradient-text">Important: This calculator is for general and external candidates but there are various categories for admission. For different categories, there may be slight variation in the cutoff. Consultation with admission office is recommended.</div>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <form id="probabilityForm">
+                    <div class="form-group">
+                        <label for="gender">Student Gender:</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="boys">Boys</option>
+                            <option value="girls">Girls</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Student Name:</label>
+                        <input type="text" id="name" placeholder="Enter student name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="marks">Marks Obtained:</label>
+                        <input type="number" id="marks" min="0" max="85" placeholder="Enter marks (0-85)" required>
+                        <div id="marksError" class="error">Please enter marks between 0 and 85.</div>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn">Calculate Interview Probability</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="result" class="result">
+            <h2>Interview Selection Probability</h2>
+            <div class="result-item">
+                <span>Student Name:</span>
+                <span id="resultName" class="result-value"></span>
+            </div>
+            <div class="result-item">
+                <span>Gender:</span>
+                <span id="resultGender" class="result-value"></span>
+            </div>
+            <div class="result-item">
+                <span>Marks:</span>
+                <span id="resultMarks" class="result-value"></span>
+            </div>
+            
+            <div class="result-status" id="resultStatus">Status: Pending</div>
+            
+            <div class="result-note" id="resultNote">
+                <!-- Probability information will be displayed here -->
+            </div>
+            
+            <div class="seat-info" id="seatInfo">
+                <!-- Seat information will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3 class="info-heading">Important Information</h3>
+            
+            <div class="info-point important-info">
+                <span class="info-icon">⚠️</span>
+                <span><strong>Note:</strong> This probability calculator is for general and external candidates only. There might be variations for different categories.</span>
+            </div>
+            
+            <div class="info-point">
+                <span class="info-icon">📊</span>
+                <span>The interview list will typically include double the number of available seats for both boys and girls.</span>
+            </div>
+            
+            <div class="info-point">
+                <span class="info-icon">💺</span>
+                <span>
+                    <strong>Total Seats:</strong><br>
+                    • Boys: 270 seats<br>
+                    • Girls: 180 seats
+                </span>
+            </div>
+            
+            <div class="info-point">
+                <span class="info-icon">ℹ️</span>
+                <span>Interview list selection is based on previous years' data and current year's performance.</span>
+            </div>
+            
+            <div class="info-point">
+                <span class="info-icon">📝</span>
+                <span>For the Class 9 interview selection list, there is no waiting list or ranking released.</span>
+            </div>
+            
+            <div class="info-point">
+                <span class="info-icon">📞</span>
+                <span>If you need any help regarding counselling or have questions, please contact us:</span>
+            </div>
+            
+            <div class="contact">
+                09149822922
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all necessary DOM elements
+            const form = document.getElementById('probabilityForm');
+            const resultElement = document.getElementById('result');
+            const resultNoteElement = document.getElementById('resultNote');
+            const resultStatusElement = document.getElementById('resultStatus');
+            const seatInfoDiv = document.getElementById('seatInfo');
+            const resultNameElement = document.getElementById('resultName');
+            const resultGenderElement = document.getElementById('resultGender');
+            const resultMarksElement = document.getElementById('resultMarks');
+            const submitBtn = document.getElementById('submitBtn');
+            
+                // Admission criteria - Updated as per requirements
+            const admissionCriteria = {
+                boys: {
+                    veryHighChanceRange: { min: 71, max: 84 },
+                    highChanceRange: { min: 68, max: 70 },
+                    mediumChanceRange: { min: 65, max: 67 },
+                    
+                    veryHighChanceMessage: 'Congratulations! You have a very very high selection probability for the interview list based on previous year cutoff.',
+                    highChanceMessage: 'Congratulations! You have approximately 95% selection probability for the interview list.',
+                    mediumChanceMessage: 'Good news! You have 70% selection probability for the interview list.',
+                    lowChanceMessage: 'Your marks indicate a very low selection probability for the interview list.',
+                    
+                    totalSeats: 270,
+                    interviewListMultiplier: 2
+                },
+                girls: {
+                    veryHighChanceRange: { min: 68, max: 84 },
+                    highChanceRange: { min: 65, max: 67 },
+                    
+                    veryHighChanceMessage: 'Congratulations! You have a very very high selection probability for the interview list.',
+                    highChanceMessage: 'Good news! You have 90% selection probability for the interview list.',
+                    lowChanceMessage: 'Your marks indicate a very low selection probability for the interview list.',
+                    
+                    totalSeats: 180,
+                    interviewListMultiplier: 2
+                }
+            };
+            
+            // Function to calculate probability
+            function calculateProbability(e) {
+                // Prevent default form submission
+                if (e) {
+                    e.preventDefault();
+                }
+                
+                // Reset error display
+                document.getElementById('marksError').style.display = 'none';
+                
+                // Get input values
+                const name = document.getElementById('name').value.trim();
+                const gender = document.getElementById('gender').value;
+                const marksInput = document.getElementById('marks').value.trim();
+                const marks = parseFloat(marksInput);
+                
+                // Validate inputs with more detailed error handling
+                if (name === '') {
+                    alert('Please enter student name');
+                    return false;
+                }
+                
+                if (gender === '') {
+                    alert('Please select gender');
+                    return false;
+                }
+                
+                // Validate marks
+                if (marksInput === '' || isNaN(marks) || marks < 0 || marks > 85) {
+                    document.getElementById('marksError').style.display = 'block';
+                    return false;
+                }
+                
+                // Get admission criteria for the selected gender
+                const criteria = admissionCriteria[gender];
+                
+                // Set basic result values
+                resultNameElement.textContent = name;
+                resultGenderElement.textContent = gender.charAt(0).toUpperCase() + gender.slice(1);
+                resultMarksElement.textContent = marks;
+                
+                // Determine probability and status based on updated criteria
+                let statusMessage = 'Very Low Selection Probability';
+                let noteMessage = '';
+                
+                if (gender === 'boys') {
+                    if (marks >= criteria.veryHighChanceRange.min && marks <= criteria.veryHighChanceRange.max) {
+                        statusMessage = 'Very High Selection Probability';
+                        noteMessage = criteria.veryHighChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#e3f2fd';
+                        resultNoteElement.style.borderLeft = '4px solid #2196f3';
+                    } else if (marks >= criteria.highChanceRange.min && marks <= criteria.highChanceRange.max) {
+                        statusMessage = '95% Selection Probability';
+                        noteMessage = criteria.highChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#e8f5e9';
+                        resultNoteElement.style.borderLeft = '4px solid #4caf50';
+                    } else if (marks >= criteria.mediumChanceRange.min && marks <= criteria.mediumChanceRange.max) {
+                        statusMessage = '70% Selection Probability';
+                        noteMessage = criteria.mediumChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#fff8e1';
+                        resultNoteElement.style.borderLeft = '4px solid #ffc107';
+                    } else {
+                        noteMessage = criteria.lowChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#ffebee';
+                        resultNoteElement.style.borderLeft = '4px solid #f44336';
+                    }
+                } else if (gender === 'girls') {
+                    if (marks >= criteria.veryHighChanceRange.min && marks <= criteria.veryHighChanceRange.max) {
+                        statusMessage = 'Very High Selection Probability';
+                        noteMessage = criteria.veryHighChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#e3f2fd';
+                        resultNoteElement.style.borderLeft = '4px solid #2196f3';
+                    } else if (marks >= criteria.highChanceRange.min && marks <= criteria.highChanceRange.max) {
+                        statusMessage = '90% Selection Probability';
+                        noteMessage = criteria.highChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#e8f5e9';
+                        resultNoteElement.style.borderLeft = '4px solid #4caf50';
+                    } else {
+                        noteMessage = criteria.lowChanceMessage;
+                        resultNoteElement.style.backgroundColor = '#ffebee';
+                        resultNoteElement.style.borderLeft = '4px solid #f44336';
+                    }
+                }
+                
+                // Update result display
+                resultStatusElement.textContent = `Status: ${statusMessage}`;
+                resultNoteElement.textContent = noteMessage;
+                
+                // Update seat information
+                seatInfoDiv.innerHTML = `
+                    <div class="seat-item total-seats">
+                        Total ${gender.charAt(0).toUpperCase() + gender.slice(1)} Seats
+                        <span class="seat-count">${criteria.totalSeats}</span>
+                    </div>
+                    <div class="seat-item">
+                        Estimated Interview List
+                        <span class="seat-count">${criteria.totalSeats * criteria.interviewListMultiplier}</span>
+                    </div>
+                `;
+                
+                // Ensure result is visible
+                resultElement.style.display = 'block';
+                
+                // Scroll to results
+                resultElement.scrollIntoView({behavior: 'smooth'});
+                
+                return true;
+            }
+            
+            // Add event listeners to form and submit button
+            form.addEventListener('submit', calculateProbability);
+            submitBtn.addEventListener('click', calculateProbability);
+        });
+    </script>
+</body>
+</html>
